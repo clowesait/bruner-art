@@ -1,3 +1,6 @@
+import { AuthContextProvider } from "./_utils/auth-context";
+import AuthButton from "./authorization/AuthButton";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -20,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
+      <AuthContextProvider>
         <div className="min-h-screen bg-green-200 text-black">
           <header className="w-full bg-green-300 border-b">
             <nav className="min-w-screen py-6">
@@ -43,6 +47,8 @@ export default function RootLayout({ children }) {
                 >
                   Contact
                 </a>
+                
+                <AuthButton className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600" />
               </div>
             </nav>
           </header>
@@ -55,6 +61,7 @@ export default function RootLayout({ children }) {
             </div>
           </footer>
         </div>
+        </AuthContextProvider>
       </body>
     </html>
   );
