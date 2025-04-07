@@ -22,24 +22,24 @@ export default function RootLayout({ children }) {
       <body>
         <div className="min-h-screen bg-green-200 text-black">
           <header className="w-full bg-green-300 border-b">
-            <nav className="max-w-4xl flex flex-row items-center py-6 space-y-4">
-              <h1 className="text-4xl font-bold my-4 mx-6">Bruner Art</h1>
-              <div className="flex flex-wrap justify-center gap-4 px-32">
+            <nav className="min-w-screen py-6">
+              <h1 className="flex justify-center text-4xl font-bold mx-6 items-center">Bruner Art</h1>
+              <div className="flex justify-center">
                 <a
                   href="/"
-                  className="px-6 py-3 text-lg font-bold bg-gray-500 rounded-md"
+                  className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Home
                 </a>
                 <a
                   href="/gallery"
-                  className="px-6 py-3 text-lg font-bold bg-gray-500 rounded-md"
+                  className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Gallery
                 </a>
                 <a
                   href="/contact"
-                  className="px-6 py-3 text-lg font-bold bg-gray-500 rounded-md"
+                  className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Contact
                 </a>
