@@ -1,15 +1,27 @@
 "use client";
 
+import { use, useEffect, useState } from "react";
 import { useUserAuth } from "../_utils/auth-context";
 
-export default function AuthButton() {
-  const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+export default function AuthButton({ className }) {
+    const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+    const [isMounted, setIsMounted] = useState(false);
 
-  return (
-    <button
-      onClick={user ? firebaseSignOut : gitHubSignIn}
-      className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600">
-      {user ? "Logout" : "Login"}
-    </button>
-  );
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
+  // If user is logged in, show logout button, otherwise show login button
+    return (
+        <button
+        onClick={user ? firebaseSignOut : gitHubSignIn}
+        className={className}
+        >
+        {user ? "Logout" : "Login"}
+        </button>
+        );
 }
