@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
                   Contact
                 </a>
                 
-                <AuthButton className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600" />
+                <AuthButton className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600" />
               </div>
             </nav>
           </header>
