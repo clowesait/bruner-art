@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserAuth } from "../_utils/auth-context";
 
 export default function AuthButton({ className }) {
