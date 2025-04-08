@@ -30,26 +30,29 @@ export default function RootLayout({ children }) {
           <header className="w-full bg-green-300 border-b">
             <nav className="min-w-screen py-6">
               <h1 className="flex justify-center text-4xl font-bold mx-6 items-center">Bruner Art</h1>
-              <div className="flex justify-center">
+              <div className="flex justify-center gap-1">
+                
                 <Link 
                   href="/"
-                  className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600"
+                  className="px-6 py-3 ml-32 text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Home
                 </Link>
                 <Link
                   href="/gallery"
-                  className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600"
+                  className="px-6 py-3 h-full w-28 text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Gallery
                 </Link>
                 <Link
                   href="/contact"
-                  className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600"
+                  className="px-6 py-3 h-full w-28 text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Contact
                 </Link>
-                <AuthButton className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600" />
+                <div className="">
+                <AuthButton className=" h-full w-28 text-lg font-bold ml-4 text-amber-500 hover:text-amber-600 " />
+              </div>
               </div>
             </nav>
           </header>
