@@ -18,9 +18,10 @@ export const sendContactEmail = async ({ name, email, message }) => {
   }
 };
 
-// This function fetches posts from the Firestore database, orders them by creation date in descending order, and returns an array of posts with their IDs and data.
+// This function fetches posts from the Firestore database, orders them by likes in descending order, and returns an array of posts with their IDs and data.
+// Ideally we could have some buttons to filter the posts by likes, comments, etc. but for now we will just fetch all posts and order them by likes
 export const fetchPosts = async () => {
-  const queryCollection = query(collection(db, COLLECTION), orderBy("createdAt", "desc"));
+  const queryCollection = query(collection(db, COLLECTION), orderBy("likes", "desc"));
   const snapshot = await getDocs(queryCollection);
   return snapshot.docs.map((doc) => ({
     id: doc.id,
