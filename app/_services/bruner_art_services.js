@@ -55,7 +55,7 @@ export const likePost = async (postId) => {
   const postRef = doc(db, COLLECTION, postId);
   await updateDoc(postRef, {likes: increment(1),});
   return { success: true };
-}
+};
 // This function adds a comment to a post in the Firestore database by updating the comments array of the post document.
 export const commentOnPost = async (postId, comment) => {
   const postRef = doc(db, COLLECTION, postId);

@@ -6,14 +6,21 @@ import { likePost, commentOnPost } from "../_services/bruner_art_services";
 export default function GalleryItem({ post, onLike, onCommentAdded }) {
   const { user } = useUserAuth();
   const [comment, setComment] = useState("");
+  const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = async () => {
     if (!user) {
       alert("You must be logged in to like a post.");
       return;
     }
+    if (isLiked) {
+      alert("You have already liked this post.");
+      return;
+    }
+
     const result = await likePost(post.id);
     if (result.success) {
+      setIsLiked(true);
       onLike(post.id);
     }
   }
