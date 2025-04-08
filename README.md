@@ -1,6 +1,9 @@
 This is a list of functionalities that need to be implemented and worked on:
 
 ---UNFINISHED---
+
+
+---FINISHED---
 Home Page
   -Landing page design
   -Firestore github auth
@@ -17,7 +20,4 @@ About Page
 
 Contact Page
   -Contact page design
-  -Email form potentially will need to implement and use an API for this
-
-
----FINISHED---
+  -Email form

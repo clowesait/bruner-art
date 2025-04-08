@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { AuthContextProvider } from "./_utils/auth-context";
 import AuthButton from "./authorization/AuthButton";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,25 +31,24 @@ export default function RootLayout({ children }) {
             <nav className="min-w-screen py-6">
               <h1 className="flex justify-center text-4xl font-bold mx-6 items-center">Bruner Art</h1>
               <div className="flex justify-center">
-                <a
+                <Link 
                   href="/"
                   className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Home
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/gallery"
                   className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Gallery
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contact"
                   className="px-6 py-3 h-full text-lg font-bold bg-amber-400 hover:bg-amber-600"
                 >
                   Contact
-                </a>
-                
+                </Link>
                 <AuthButton className="px-6 py-3 text-lg font-bold bg-amber-400 hover:bg-amber-600" />
               </div>
             </nav>
