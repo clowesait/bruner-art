@@ -8,6 +8,9 @@ export default function GalleryItem({ post, onLike, onCommentAdded }) {
   const [comment, setComment] = useState("");
   const [isLiked, setIsLiked] = useState(false);
 
+  // This function handles the like button click event
+  // It checks if the user is logged in and if they have already liked the post
+  // If not, it calls the likePost function from bruner_art_services.js to update the like count
   const handleLike = async () => {
     if (!user) {
       alert("You must be logged in to like a post.");
@@ -24,7 +27,8 @@ export default function GalleryItem({ post, onLike, onCommentAdded }) {
       onLike(post.id);
     }
   }
-
+  // This function handles the comment submission event
+  // It checks if the user is logged in and if the comment is not empty
   const handleCommentSubmit = async (event) => {
     event.preventDefault();
 
@@ -39,6 +43,8 @@ export default function GalleryItem({ post, onLike, onCommentAdded }) {
       setComment("");
     }
   }
+  // renders the gallery item with the image, title, description, likes, and comments
+  // It also includes a form for adding comments if the user is logged in
   return (
     <div className="border border-green-900 p-4 rounded">
       <img src={post.image} alt={post.title} className="w-full h-auto mb-2" />

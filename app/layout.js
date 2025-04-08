@@ -1,3 +1,6 @@
+/* This file defines the layout for the website. Mainly includes the navbar and footer
+but also wraps every page in autentication */
+
 import Link from "next/link";
 import { AuthContextProvider } from "./_utils/auth-context";
 import AuthButton from "./authorization/AuthButton";

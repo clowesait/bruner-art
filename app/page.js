@@ -1,3 +1,5 @@
+/* Landing page for the website. Includes temporary about info and welcomes the user */
+
 export default function Home() {
   return (
         <main className="flex min-h-screen flex-col items-center">
