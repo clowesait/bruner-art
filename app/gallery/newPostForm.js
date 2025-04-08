@@ -14,25 +14,15 @@ export default function NewPostForm({ onSubmit }) {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     if (!imageFile) {
       alert("Please upload an image.");
       return;
     }
-    // creates a new post object with the current state values
-    // the id is generated using the current timestamp
-    const newPost = {
-      id: crypto.randomUUID(),
-      imageFile,
-      title: title || "Unnamed",
-      description: description || "No description provided.",
-      likes: 0,
-      comments: [],
-    };
-
-    onSubmit(newPost);
+    await onSubmit({ imageFile, title, description });
+    
     // Reset the form fields after submission
     setImageFile(null);
     setTitle("");
@@ -80,7 +70,7 @@ export default function NewPostForm({ onSubmit }) {
 
       <button
         type="submit"
-        className="px-6 py-2 bg-blue-500 text-white font bold"
+        className="px-6 py-2 bg-amber-400 hover:bg-amber-600 font-bold"
       >
         Post
       </button>
