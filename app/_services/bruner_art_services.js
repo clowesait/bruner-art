@@ -2,9 +2,9 @@ import emailjs from "emailjs-com";
 import {db, storage } from "../_utils/firebase";
 import { doc, updateDoc, increment, arrayUnion, collection, addDoc, getDocs, query, orderBy, Timestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL} from "firebase/storage";
-const SERVICE_ID = "service_p1mhtf3";
-const TEMPLATE_ID = "template_9jc7w8e";
-const PUBLIC_KEY = "XYWQMdGzZcAgcHF2x";
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 const COLLECTION = "art";
 
