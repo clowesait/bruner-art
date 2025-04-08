@@ -20,10 +20,11 @@ export default function GalleryItem({ post, onLike, onCommentAdded }) {
       alert("You have already liked this post.");
       return;
     }
-
+    // What actually adds the post to the database
     const result = await likePost(post.id);
     if (result.success) {
       setIsLiked(true);
+      //Updates post like count on the page
       onLike(post.id);
     }
   }
@@ -37,6 +38,7 @@ export default function GalleryItem({ post, onLike, onCommentAdded }) {
       text: comment,
       user: user.displayName || user.email
     }
+    //What actually writes the comment to the data base using the post id and the comment
     const result = await commentOnPost(post.id, newComment);
     if (result.success) {
       onCommentAdded(post.id, newComment);
@@ -54,7 +56,7 @@ export default function GalleryItem({ post, onLike, onCommentAdded }) {
         {post.likes} Likes
         <button onClick={handleLike} className="bg-green-600 hover:bg-green-400 rounded m-2 p-2">👍</button>
       </div>
-      
+{/*Only shows the comment form if user is logged in. Calls handleCommentSubmit . On change sets comment*/}
       <Comments comments={post.comments} />
       { user && (
         <form onSubmit={handleCommentSubmit} className="mb-4">
